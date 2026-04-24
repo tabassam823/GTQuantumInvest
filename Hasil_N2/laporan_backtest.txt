@@ -10,6 +10,7 @@ Beta: 0.9912
   - LR: 0.2276
   - Detail:
     [Depth 1] Konvergen dalam 125 iterasi | E = 1.063857
+    [Depth 2] Konvergen dalam 2000 iterasi | E = 1.078953
   - Terpilih: ['TLKM.JK'] | Depth: 1 | E_min: 1.063857
 ----------------------------------------
 [2021-02-02]
@@ -17,6 +18,7 @@ Beta: 0.9912
   - LR: 0.3728
   - Detail:
     [Depth 1] Konvergen dalam 100 iterasi | E = 1.140736
+    [Depth 2] Konvergen dalam 450 iterasi | E = 1.141767
   - Terpilih: ['TLKM.JK'] | Depth: 1 | E_min: 1.140736
 ----------------------------------------
 [2021-03-04]
@@ -24,27 +26,31 @@ Beta: 0.9912
   - LR: 0.6105
   - Detail:
     [Depth 1] Konvergen dalam 125 iterasi | E = 1.085074
+    [Depth 2] Konvergen dalam 100 iterasi | E = 1.176645
   - Terpilih: ['BBCA.JK'] | Depth: 1 | E_min: 1.085074
 ----------------------------------------
 [2021-04-06]
   - Nash Eq: 01 | Utility: 0.256316
   - LR: 0.6105
   - Detail:
-    [Depth 1] Konvergen dalam 175 iterasi | E = 0.994638
-  - Terpilih: ['BBCA.JK'] | Depth: 1 | E_min: 0.994638
+    [Depth 1] Konvergen dalam 175 iterasi | E = 0.994639
+    [Depth 2] Konvergen dalam 100 iterasi | E = 1.143539
+  - Terpilih: ['BBCA.JK'] | Depth: 1 | E_min: 0.994639
 ----------------------------------------
 [2021-05-05]
   - Nash Eq: 01 | Utility: 0.216782
   - LR: 0.6105
   - Detail:
     [Depth 1] Konvergen dalam 175 iterasi | E = 1.034056
+    [Depth 2] Konvergen dalam 100 iterasi | E = 1.125938
   - Terpilih: ['BBCA.JK'] | Depth: 1 | E_min: 1.034056
 ----------------------------------------
 [2021-06-10]
-  - Nash Eq: 10 | Utility: 0.047536
+  - Nash Eq: 10 | Utility: 0.047537
   - LR: 0.3728
   - Detail:
     [Depth 1] Konvergen dalam 100 iterasi | E = 1.203228
+    [Depth 2] Konvergen dalam 425 iterasi | E = 1.203441
   - Terpilih: ['TLKM.JK'] | Depth: 1 | E_min: 1.203228
 ----------------------------------------
 [2021-07-09]
@@ -52,6 +58,7 @@ Beta: 0.9912
   - LR: 1.0000
   - Detail:
     [Depth 1] Konvergen dalam 125 iterasi | E = 1.335897
+    [Depth 2] Konvergen dalam 100 iterasi | E = 1.356613
   - Terpilih: ['BBCA.JK'] | Depth: 1 | E_min: 1.335897
 ----------------------------------------
 [2021-08-10]
@@ -59,6 +66,7 @@ Beta: 0.9912
   - LR: 0.6105
   - Detail:
     [Depth 1] Konvergen dalam 150 iterasi | E = 1.195794
+    [Depth 2] Konvergen dalam 100 iterasi | E = 1.322057
   - Terpilih: ['BBCA.JK'] | Depth: 1 | E_min: 1.195794
 ----------------------------------------
 [2021-09-10]
@@ -66,6 +74,7 @@ Beta: 0.9912
   - LR: 0.6105
   - Detail:
     [Depth 1] Konvergen dalam 150 iterasi | E = 1.183126
+    [Depth 2] Konvergen dalam 100 iterasi | E = 1.253164
   - Terpilih: ['BBCA.JK'] | Depth: 1 | E_min: 1.183126
 ----------------------------------------
 [2021-10-11]
@@ -73,6 +82,7 @@ Beta: 0.9912
   - LR: 0.3728
   - Detail:
     [Depth 1] Konvergen dalam 100 iterasi | E = 1.057606
+    [Depth 2] Konvergen dalam 450 iterasi | E = 1.058143
   - Terpilih: ['TLKM.JK'] | Depth: 1 | E_min: 1.057606
 ----------------------------------------
 [2021-11-10]
@@ -80,6 +90,7 @@ Beta: 0.9912
   - LR: 0.6105
   - Detail:
     [Depth 1] Konvergen dalam 150 iterasi | E = 1.038949
+    [Depth 2] Konvergen dalam 100 iterasi | E = 1.061757
   - Terpilih: ['BBCA.JK'] | Depth: 1 | E_min: 1.038949
 ----------------------------------------
 [2021-12-09]
@@ -87,6 +98,7 @@ Beta: 0.9912
   - LR: 0.6105
   - Detail:
     [Depth 1] Konvergen dalam 125 iterasi | E = 1.074053
+    [Depth 2] Konvergen dalam 100 iterasi | E = 1.122413
   - Terpilih: ['BBCA.JK'] | Depth: 1 | E_min: 1.074053
 ----------------------------------------
 [2022-01-10]
@@ -94,6 +106,7 @@ Beta: 0.9912
   - LR: 0.6105
   - Detail:
     [Depth 1] Konvergen dalam 225 iterasi | E = 0.955464
+    [Depth 2] Konvergen dalam 125 iterasi | E = 0.994664
   - Terpilih: ['BBCA.JK'] | Depth: 1 | E_min: 0.955464
 ----------------------------------------
 [2022-02-09]
@@ -101,6 +114,7 @@ Beta: 0.9912
   - LR: 0.6105
   - Detail:
     [Depth 1] Konvergen dalam 200 iterasi | E = 0.963934
+    [Depth 2] Konvergen dalam 100 iterasi | E = 1.031771
   - Terpilih: ['BBCA.JK'] | Depth: 1 | E_min: 0.963934
 ----------------------------------------
 [2022-03-14]
@@ -108,6 +122,7 @@ Beta: 0.9912
   - LR: 0.6105
   - Detail:
     [Depth 1] Konvergen dalam 250 iterasi | E = 0.910350
+    [Depth 2] Konvergen dalam 100 iterasi | E = 1.036236
   - Terpilih: ['BBCA.JK'] | Depth: 1 | E_min: 0.910350
 ----------------------------------------
 [2022-04-12]
@@ -115,6 +130,7 @@ Beta: 0.9912
   - LR: 0.6105
   - Detail:
     [Depth 1] Konvergen dalam 150 iterasi | E = 1.049316
+    [Depth 2] Konvergen dalam 100 iterasi | E = 1.161156
   - Terpilih: ['BBCA.JK'] | Depth: 1 | E_min: 1.049316
 ----------------------------------------
 [2022-05-23]
@@ -122,6 +138,7 @@ Beta: 0.9912
   - LR: 0.6105
   - Detail:
     [Depth 1] Konvergen dalam 125 iterasi | E = 1.117568
+    [Depth 2] Konvergen dalam 100 iterasi | E = 1.257290
   - Terpilih: ['BBCA.JK'] | Depth: 1 | E_min: 1.117568
 ----------------------------------------
 [2022-06-23]
@@ -129,6 +146,7 @@ Beta: 0.9912
   - LR: 0.3728
   - Detail:
     [Depth 1] Konvergen dalam 100 iterasi | E = 1.207114
+    [Depth 2] Konvergen dalam 425 iterasi | E = 1.207780
   - Terpilih: ['TLKM.JK'] | Depth: 1 | E_min: 1.207114
 ----------------------------------------
 [2022-07-22]
@@ -136,27 +154,31 @@ Beta: 0.9912
   - LR: 0.6105
   - Detail:
     [Depth 1] Konvergen dalam 125 iterasi | E = 1.167101
+    [Depth 2] Konvergen dalam 100 iterasi | E = 1.253195
   - Terpilih: ['BBCA.JK'] | Depth: 1 | E_min: 1.167101
 ----------------------------------------
 [2022-08-23]
-  - Nash Eq: 01 | Utility: 0.129420
+  - Nash Eq: 01 | Utility: 0.129419
   - LR: 0.6105
   - Detail:
     [Depth 1] Konvergen dalam 125 iterasi | E = 1.121062
+    [Depth 2] Konvergen dalam 100 iterasi | E = 1.220051
   - Terpilih: ['BBCA.JK'] | Depth: 1 | E_min: 1.121062
 ----------------------------------------
 [2022-09-21]
   - Nash Eq: 10 | Utility: 0.081244
   - LR: 0.2276
   - Detail:
-    [Depth 1] Konvergen dalam 125 iterasi | E = 1.169592
-  - Terpilih: ['TLKM.JK'] | Depth: 1 | E_min: 1.169592
+    [Depth 1] Konvergen dalam 125 iterasi | E = 1.169591
+    [Depth 2] Konvergen dalam 1200 iterasi | E = 1.183824
+  - Terpilih: ['TLKM.JK'] | Depth: 1 | E_min: 1.169591
 ----------------------------------------
 [2022-10-20]
   - Nash Eq: 10 | Utility: 0.068292
   - LR: 0.2276
   - Detail:
     [Depth 1] Konvergen dalam 125 iterasi | E = 1.182593
+    [Depth 2] Konvergen dalam 2000 iterasi | E = 1.201981
   - Terpilih: ['TLKM.JK'] | Depth: 1 | E_min: 1.182593
 ----------------------------------------
 [2022-11-18]
@@ -164,6 +186,7 @@ Beta: 0.9912
   - LR: 0.2276
   - Detail:
     [Depth 1] Konvergen dalam 150 iterasi | E = 1.073506
+    [Depth 2] Konvergen dalam 2000 iterasi | E = 1.098760
   - Terpilih: ['TLKM.JK'] | Depth: 1 | E_min: 1.073506
 ----------------------------------------
 [2022-12-19]
@@ -171,6 +194,7 @@ Beta: 0.9912
   - LR: 1.0000
   - Detail:
     [Depth 1] Konvergen dalam 175 iterasi | E = 1.103973
+    [Depth 2] Konvergen dalam 1125 iterasi | E = 1.104918
   - Terpilih: ['TLKM.JK'] | Depth: 1 | E_min: 1.103973
 ----------------------------------------
 [2023-01-17]
@@ -178,6 +202,7 @@ Beta: 0.9912
   - LR: 1.0000
   - Detail:
     [Depth 1] Konvergen dalam 175 iterasi | E = 1.132058
+    [Depth 2] Konvergen dalam 1350 iterasi | E = 1.133192
   - Terpilih: ['TLKM.JK'] | Depth: 1 | E_min: 1.132058
 ----------------------------------------
 [2023-02-16]
@@ -185,6 +210,7 @@ Beta: 0.9912
   - LR: 1.0000
   - Detail:
     [Depth 1] Konvergen dalam 150 iterasi | E = 1.120404
+    [Depth 2] Konvergen dalam 200 iterasi | E = 1.120433
   - Terpilih: ['TLKM.JK'] | Depth: 1 | E_min: 1.120404
 ----------------------------------------
 [2023-03-17]
@@ -192,6 +218,7 @@ Beta: 0.9912
   - LR: 0.2276
   - Detail:
     [Depth 1] Konvergen dalam 125 iterasi | E = 1.261201
+    [Depth 2] Konvergen dalam 1825 iterasi | E = 1.276503
   - Terpilih: ['TLKM.JK'] | Depth: 1 | E_min: 1.261201
 ----------------------------------------
 [2023-04-27]
@@ -199,6 +226,7 @@ Beta: 0.9912
   - LR: 0.2276
   - Detail:
     [Depth 1] Konvergen dalam 125 iterasi | E = 1.140115
+    [Depth 2] Konvergen dalam 2000 iterasi | E = 1.156950
   - Terpilih: ['TLKM.JK'] | Depth: 1 | E_min: 1.140115
 ----------------------------------------
 [2023-05-30]
@@ -206,6 +234,7 @@ Beta: 0.9912
   - LR: 0.3728
   - Detail:
     [Depth 1] Konvergen dalam 100 iterasi | E = 1.183911
+    [Depth 2] Konvergen dalam 425 iterasi | E = 1.184355
   - Terpilih: ['TLKM.JK'] | Depth: 1 | E_min: 1.183911
 ----------------------------------------
 [2023-07-05]
@@ -213,6 +242,7 @@ Beta: 0.9912
   - LR: 0.6105
   - Detail:
     [Depth 1] Konvergen dalam 125 iterasi | E = 1.136101
+    [Depth 2] Konvergen dalam 100 iterasi | E = 1.179067
   - Terpilih: ['BBCA.JK'] | Depth: 1 | E_min: 1.136101
 ----------------------------------------
 [2023-08-04]
@@ -220,20 +250,23 @@ Beta: 0.9912
   - LR: 0.2276
   - Detail:
     [Depth 1] Konvergen dalam 150 iterasi | E = 1.119468
+    [Depth 2] Konvergen dalam 2000 iterasi | E = 1.143887
   - Terpilih: ['TLKM.JK'] | Depth: 1 | E_min: 1.119468
 ----------------------------------------
 [2023-09-05]
   - Nash Eq: 10 | Utility: 0.082715
   - LR: 0.2276
   - Detail:
-    [Depth 1] Konvergen dalam 125 iterasi | E = 1.167533
-  - Terpilih: ['TLKM.JK'] | Depth: 1 | E_min: 1.167533
+    [Depth 1] Konvergen dalam 125 iterasi | E = 1.167532
+    [Depth 2] Konvergen dalam 1025 iterasi | E = 1.179298
+  - Terpilih: ['TLKM.JK'] | Depth: 1 | E_min: 1.167532
 ----------------------------------------
 [2023-10-05]
   - Nash Eq: 10 | Utility: 0.118319
   - LR: 0.2276
   - Detail:
     [Depth 1] Konvergen dalam 150 iterasi | E = 1.132058
+    [Depth 2] Konvergen dalam 2000 iterasi | E = 1.156173
   - Terpilih: ['TLKM.JK'] | Depth: 1 | E_min: 1.132058
 ----------------------------------------
 [2023-11-03]
@@ -241,6 +274,7 @@ Beta: 0.9912
   - LR: 0.2276
   - Detail:
     [Depth 1] Konvergen dalam 125 iterasi | E = 1.279944
+    [Depth 2] Konvergen dalam 2000 iterasi | E = 1.298203
   - Terpilih: ['TLKM.JK'] | Depth: 1 | E_min: 1.279944
 ----------------------------------------
 [2023-12-04]
@@ -248,5 +282,6 @@ Beta: 0.9912
   - LR: 1.0000
   - Detail:
     [Depth 1] Konvergen dalam 125 iterasi | E = 1.276817
+    [Depth 2] Konvergen dalam 100 iterasi | E = 1.279978
   - Terpilih: ['BBCA.JK'] | Depth: 1 | E_min: 1.276817
 ----------------------------------------

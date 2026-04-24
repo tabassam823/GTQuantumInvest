@@ -92,12 +92,13 @@ def run_strategy_step(lookback_data, tickers, curr_date, K=2, penalty_A=5.0,
 
     # C_Ising = sum(Q_ii / 2) + sum_{i!=j} (Q_ij / 4) + C
     sum_Q_ii_half = np.sum(Q_diag) / 2.0
-    sum_Q_ij_quarter = 0.0
+    sum_Q_ij_fourth_total = 0.0
     for i in range(n_assets):
-        for j in range(i + 1, n_assets):
-            sum_Q_ij_quarter += Q_off[i, j] / 2.0 # sum_{i!=j} Q_ij/4 = sum_{i<j} Q_ij/2
+        for j in range(n_assets):
+            if i != j:
+                sum_Q_ij_fourth_total += Q_off[i, j] / 4.0
             
-    C_Ising = sum_Q_ii_half + sum_Q_ij_quarter + C_const
+    C_Ising = sum_Q_ii_half + sum_Q_ij_fourth_total + C_const
 
     # --- EKSPOR BIAS & INTERAKSI QUBO (Poin 3 & 4) ---
     h_df = pd.DataFrame({'Date': [curr_date.date()] * n_assets, 'Ticker': tickers, 'Bias_h': h_total})
@@ -110,10 +111,20 @@ def run_strategy_step(lookback_data, tickers, curr_date, K=2, penalty_A=5.0,
     J_df = pd.DataFrame(J_list)
     J_df.to_csv('interaksi_J_total.csv', mode='a', header=not os.path.exists('interaksi_J_total.csv'), index=False)
 
-    # [Tugas 4] Pencarian Nash Equilibrium
-    ne_bitstring, ne_energy = find_nash_sbr(h_total, J_total, curr_date, N=n_assets, K=K)
-    print(f"    [Nash Eq] Bitstring: {ne_bitstring} | Energy: {ne_energy:.6f}")
+    # --- EKSPOR KONSTANTA C ISING ---
+    c_df = pd.DataFrame({
+        'Date': [curr_date.date()],
+        'C_const': [C_const],
+        'AK^2': [lam * K_sq],
+        'C_Ising': [C_Ising]
+    })
+    c_df.to_csv('konstanta_C_total.csv', mode='a', header=not os.path.exists('konstanta_C_total.csv'), index=False)
 
+    # [Tugas 4] Pencarian Nash Equilibrium menggunakan Utilitas Finansial Langsung
+    ne_bitstring, ne_utility = find_nash_sbr(mu_simple_period, sigma_period_matrix, gamma, curr_date, N=n_assets, K=K)
+    print(f"    [Nash Eq] Bitstring: {ne_bitstring} | Utility: {ne_utility:.6f}")
+
+    # Membangun Hamiltonian dengan C_Ising kembali (offset=C_Ising)
     H = build_hamiltonian_total(h_total, J_total, n_assets, offset=C_Ising)
     
     # [LR Finder] Mencari Learning Rate optimal untuk bulan ini
@@ -130,4 +141,4 @@ def run_strategy_step(lookback_data, tickers, curr_date, K=2, penalty_A=5.0,
     )
 
     lr_data = (test_a_values, final_energies, best_a)
-    return selected_indices, depth_used, energy_final, best_history, depth_energies, lr_data, ne_bitstring, ne_energy
+    return selected_indices, depth_used, energy_final, best_history, depth_energies, lr_data, ne_bitstring, ne_utility

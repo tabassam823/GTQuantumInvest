@@ -108,7 +108,7 @@ def run_vqe_adaptive(H, n_qubits, curr_date, ne_bitstring=None, K=2, max_depth=4
                 init_p = rng.uniform(0, 2 * np.pi, n_params)
 
         params, energy, e_hist, n_iters = run_spsa(cost_fn, n_params, init_params=init_p, a_base=best_a_base/depth, c_base=0.1/np.sqrt(depth), depth_label=depth)
-        print(f"    [Depth {depth}] E = {energy:.6f}")
+        print(f"    [Depth {depth}] Konvergen dalam {n_iters} iterasi | E = {energy:.6f}")
         depth_energies.append((depth, energy, n_iters))
         prev_params = params
 

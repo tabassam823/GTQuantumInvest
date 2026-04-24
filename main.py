@@ -20,6 +20,7 @@ warnings.filterwarnings('ignore')
 import os
 files_to_remove = [
     'metrik_return_dan_lambda.csv', 'bias_h_total.csv', 'interaksi_J_total.csv',
+    'konstanta_C_total.csv',
     'riwayat_nash_sbr.csv', 'hasil_pencarian_lr.csv', 'hasil_depth_vs_energi.csv',
     'riwayat_iterasi_vqe.csv', 'theta_final_all_depths.csv'
 ]
@@ -85,6 +86,8 @@ cash_assets    = {t: initial_capital for t in tickers}
 holdings_assets = {t: 0.0 for t in tickers}
 
 detail_logs = []
+depths_history = [] # Menyimpan riwayat depth tiap window
+rebalance_dates = [] # Menyimpan tanggal rebalance
 
 print(f"\n--- Memulai Backtest dari {data_clean.index[start_idx].date()} hingga {data_clean.index[-1].date()} ---")
 
@@ -101,18 +104,25 @@ for i, curr_idx in enumerate(rebalance_indices):
     next_idx = (rebalance_indices[i + 1] if i + 1 < len(rebalance_indices) else len(data_clean))
 
     # Jalankan strategi step
-    selected_indices, depth_used, energy_final, best_history, depth_energies, lr_data, ne_bs, ne_en = run_strategy_step(
+    selected_indices, depth_used, energy_final, best_history, depth_energies, lr_data, ne_bs, ne_utility = run_strategy_step(
         train_data, tickers, curr_date, K=K, penalty_A=penalty_A, max_depth=max_depth, maxiter=maxiter
     )
     
+    depths_history.append(depth_used)
+    rebalance_dates.append(curr_date.date())
+    
     selected_names = [tickers[idx] for idx in selected_indices]
+    
+    # Logging detail (Laporan)
+    vqe_details = "".join([f"    [Depth {d}] Konvergen dalam {iters} iterasi | E = {en:.6f}\n" for d, en, iters in depth_energies])
+
     print(f"[{curr_date.date()}] VQE Terpilih: {selected_names} | Depth: {depth_used} | E_min: {energy_final:.6f}")
 
-    # Logging detail
-    vqe_details = "".join([f"    [Depth {d}] E = {en:.6f}\n" for d, en, iters in depth_energies])
-    log_entry = (f"[{curr_date.date()}]\n  - Nash Eq: {ne_bs} | Energy: {ne_en:.6f}\n"
-                 f"  - LR: {lr_data[2]:.4f}\n  - Detail:\n{vqe_details}"
-                 f"  - Terpilih: {selected_names}\n" + "-"*40)
+    log_entry = (f"[{curr_date.date()}]\n"
+                 f"  - Nash Eq: {ne_bs} | Utility: {ne_utility:.6f}\n"
+                 f"  - LR: {lr_data[2]:.4f}\n"
+                 f"  - Detail:\n{vqe_details}"
+                 f"  - Terpilih: {selected_names} | Depth: {depth_used} | E_min: {energy_final:.6f}\n" + "-"*40)
     detail_logs.append(log_entry)
     last_lr_data = lr_data
 
@@ -158,7 +168,9 @@ print(f"Beta VQE terhadap {benchmark_ticker}: {vqe_beta:.4f}")
 
 # Simpan Laporan
 with open("laporan_backtest.txt", "w") as f:
-    f.write("LAPORAN STRATEGI QUANTUM VQE\n" + "="*30 + "\n")
+    f.write("LAPORAN STRATEGI QUANTUM VQE\n")
+    f.write(f"Urutan Ticker: {tickers}\n")
+    f.write("="*30 + "\n")
     f.write(f"Return: {tr_vqe:.2f}%\nSharpe: {sr_vqe:.4f}\nBeta: {vqe_beta:.4f}\n\n")
     for log in detail_logs: f.write(log + "\n")
 
@@ -244,4 +256,20 @@ plt.grid(True, linestyle=':', alpha=0.7)
 plt.tight_layout()
 plt.savefig('hasil_backtest.png')
 print("\nGrafik perbandingan lengkap disimpan sebagai 'hasil_backtest.png'.")
+
+# 6d. Grafik Depth Terpilih per Window (Permintaan Baru)
+plt.figure(figsize=(10, 5))
+avg_depth_floor = int(np.floor(np.mean(depths_history)))
+plt.plot(rebalance_dates, depths_history, marker='o', linestyle='-', color='purple', label='Depth Terpilih')
+plt.axhline(y=avg_depth_floor, color='red', linestyle='--', label=f'Rata-rata Depth (Floor): {avg_depth_floor}')
+plt.title('Depth Terpilih vs Rebalance Window')
+plt.ylabel('Depth')
+plt.xlabel('Tanggal Rebalance')
+plt.xticks(rotation=45)
+plt.legend()
+plt.grid(True, linestyle=':', alpha=0.7)
+plt.tight_layout()
+plt.savefig('grafik_depth_per_window.png')
+print(f"Grafik depth per window disimpan sebagai 'grafik_depth_per_window.png'. Rata-rata (floor): {avg_depth_floor}")
+
 plt.show()
